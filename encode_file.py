@@ -92,8 +92,3 @@ input_file=file_path
 encrypted_file = f'./{md5_value}/{md5_value}'  
 encrypt_file(input_file, encrypted_file, key)  
 print(f"文件 {input_file} 已加密为 {encrypted_file}")  
-  
-# # 解密文件  
-# decrypted_file = 'decrypted.txt'  
-# decrypt_file(encrypted_file, decrypted_file, key)  
-# print(f"文件 {encrypted_file} 已解密为 {decrypted_file}")

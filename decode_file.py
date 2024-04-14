@@ -1,3 +1,5 @@
+import json
+from Crypto.Cipher import AES  
 def decrypt_file(input_filename, output_filename, key):  
     """  
     解密文件。  
@@ -22,3 +24,22 @@ def decrypt_file(input_filename, output_filename, key):
     # 将解密后的明文写入输出文件  
     with open(output_filename, "wb") as f:  
         f.write(plaintext)  
+
+
+  
+# # 解密文件  
+def get_info(info="info.json"):
+    f=open(info,'r')
+    info_dict=json.load(f)
+    return info_dict
+
+info_dict=get_info()
+keys=info_dict.keys()
+for key in keys:
+    md5_value=key
+    en_key=info_dict[key][0]
+    en_key=en_key.encode()
+    file_name=info_dict[key][1]
+    decrypted_file = file_name
+    decrypt_file(encrypted_file, decrypted_file, key)  
+    print(f"文件 {encrypted_file} 已解密为 {decrypted_file}")
