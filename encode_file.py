@@ -54,7 +54,7 @@ def encrypt_file(input_filename, output_filename, key):
     
 def write_info(file_md5,en_key,file_name):
     if not os.path.exists("info.json"):
-        f=open("info.json",mode='w')
+        f=open("info.json",mode='w',encoding='utf-8')
         f.write(r'{"test_key":"test_value"}')
         f.close()
     f=open("info.json",mode='r')
@@ -70,8 +70,8 @@ def write_info(file_md5,en_key,file_name):
     
 
 # 示例用法  
-# file_name="联合实名举报211高校华中某业大学动物Y养系黄某若教授学术造假行为.rar"
-file_name="北邮-郑凤-举报信.pdf"
+file_name="联合实名举报211高校华中某业大学动物Y养系黄某若教授学术造假行为.rar"
+# file_name="北邮-郑凤-举报信.pdf"
 file_path = f'./{file_name}'  # 替换为你的文件路径  
 md5_value=None
 try:  
