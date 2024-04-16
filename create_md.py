@@ -10,7 +10,8 @@ print(info_dict)
 f1.close()
 
 keys=info_dict.keys()
-for key in keys:
-    text+=f" md5:{str(key)}\n en_key: {info_dict[key][0]}\n file_name: {info_dict[key][1]}\n\n"
+for idx,key in enumerate(keys):
+
+    text+=f"## {idx}-{info_dict[key][1]}\n md5:{str(key)}\n en_key: {info_dict[key][0]}\n\n"
 f.write(text)
 f.close
